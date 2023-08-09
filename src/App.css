@@ -7,32 +7,133 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #FFB6C1;
+  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  color: red;
+}
+
+.navbar {
+  margin-top: 20px;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-item a {
+  text-decoration: none;
   color: white;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 8px 12px;
 }
 
-.App-link {
-  color: #61dafb;
+.nav-item a:hover {
+  border-bottom: 2px solid white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.deals-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.deals-list {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.deal-card {
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.deal-card h3 {
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.deal-card p {
+  color: #666;
+}
+
+.deal-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffd700; /* Gold yellow background */
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.deal-title {
+  color: #333;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.deal-purchases {
+  color: #666;
+}
+.deal-ranking {
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+}
+/* Additional styles for discount happy colors */
+
+/* Background color for odd rows */
+.deal-row:nth-child(odd) {
+  background-color: #f08080; /* Light coral pink */
+}
+
+/* Background color for even rows */
+.deal-row:nth-child(even) {
+  background-color: #90ee90; /* Light green */
+}
+
+/* Hover effect */
+.deal-row:hover {
+  background-color: #ffa07a; /* Light salmon */
+  cursor: pointer;
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+.footer-social {
+  /* Add styling for social media icons or links here */
+}
+
+.footer-copyright {
+  text-align: center;
+  margin-top: 10px;
 }
