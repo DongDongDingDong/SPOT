@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import {Home} from './components'
 
 // Sample data representing deals from different businesses
 const deals = [
@@ -33,6 +34,9 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
+        <div>
+          < Home />
+        </div>
         <h3>SPOT</h3>
         <nav className="navbar">
           <ul className="nav-list">
