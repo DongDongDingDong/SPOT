@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {Home} from './components'
+import {Home, Header} from './components'
 
 // Sample data representing deals from different businesses
 const deals = [
@@ -33,20 +33,10 @@ const sortedDeals = deals.sort((a, b) => b.purchases - a.purchases);
 const App: React.FC = () => {
   return (
     <div className="App">
-      <header className="App-header">
         <div>
-          < Home />
+          < Header />
         </div>
-        <h3>SPOT</h3>
-        <nav className="navbar">
-          <ul className="nav-list">
-            <li className="nav-item"><a href="#">Home</a></li>
-            <li className="nav-item"><a href="#">Deals</a></li>
-            <li className="nav-item"><a href="#">About</a></li>
-            <li className="nav-item"><a href="#">Contact</a></li>
-          </ul>
-        </nav>
-      </header>
+
       <div className="deals-container">
         <h2>Featured Deals</h2>
         {sortedDeals.map((deal, index) => (
