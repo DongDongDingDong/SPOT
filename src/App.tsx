@@ -1,68 +1,133 @@
 import React from 'react';
 import './App.css';
-import {Home, Header} from './components'
+import {HomePage} from './components';
+import Swiper from 'swiper';
 
-// Sample data representing deals from different businesses
-const deals = [
-  {
-    id: 1,
-    business: "Restaurant A",
-    dealDescription: "50% off on selected menu items",
-    validity: "Valid until August 31, 2023",
-    purchases: 154, // Number of times purchased
-  },
-  {
-    id: 2,
-    business: "Spa & Wellness",
-    dealDescription: "Spa package: 20% off for first-time customers",
-    validity: "Valid until September 15, 2023",
-    purchases: 83, // Number of times purchased
-  },
-  {
-    id: 3,
-    business: "Fitness Center",
-    dealDescription: "One-week free trial membership",
-    validity: "Valid for new members only",
-    purchases: 215, // Number of times purchased
-  },
-];
-
-// Sort deals based on the number of purchases (descending order)
-const sortedDeals = deals.sort((a, b) => b.purchases - a.purchases);
 
 const App: React.FC = () => {
+  /*=============== SHOW MENU ===============*/
+const navMenu = document.getElementById('nav-menu');
+const navToggle = document.getElementById('nav-toggle');
+const navClose = document.getElementById('nav-close');
+
+/*===== Menu Show =====*/
+/* Validate if constant exists */
+if (navToggle) {
+navToggle.addEventListener('click', () => {
+  navMenu?.classList.add('show-menu');
+});
+}
+
+/*===== Hide Show =====*/
+/* Validate if constant exists */
+if (navClose) {
+navClose.addEventListener('click', () => {
+  navMenu?.classList.remove('show-menu');
+});
+}
+
+/*=============== IMAGE GALLERY ===============*/
+function imgGallery() {
+const mainImg = document.querySelector('.details__img'),
+  smallImg = document.querySelectorAll('.details__small-img');
+
+// smallImg.forEach((img) => {
+//   img.addEventListener('click', () => {
+//     mainImg.src = this.src;
+//   });
+// });
+}
+
+imgGallery();
+
+/*=============== SWIPER CATEGORIES ===============*/
+var swiperCategories = new Swiper('.categories__container', {
+spaceBetween: 24,
+loop: true,
+
+navigation: {
+  nextEl: '.swiper-button-next',
+  prevEl: '.swiper-button-prev',
+},
+
+breakpoints: {
+  350: {
+    slidesPerView: 2,
+    spaceBetween: 24,
+  },
+  768: {
+    slidesPerView: 3,
+    spaceBetween: 24,
+  },
+  992: {
+    slidesPerView: 4,
+    spaceBetween: 24,
+  },
+  1200: {
+    slidesPerView: 5,
+    spaceBetween: 24,
+  },
+  1400: {
+    slidesPerView: 6,
+    spaceBetween: 24,
+  },
+},
+});
+
+/*=============== SWIPER PRODUCTS ===============*/
+var swiperProducts = new Swiper('.new__container', {
+spaceBetween: 24,
+loop: true,
+
+navigation: {
+  nextEl: '.swiper-button-next',
+  prevEl: '.swiper-button-prev',
+},
+
+breakpoints: {
+  768: {
+    slidesPerView: 2,
+    spaceBetween: 24,
+  },
+  992: {
+    slidesPerView: 3,
+    spaceBetween: 24,
+  },
+  1400: {
+    slidesPerView: 4,
+    spaceBetween: 24,
+  },
+},
+});
+
+/*=============== PRODUCTS TABS ===============*/
+const tabs = document.querySelectorAll('[data-target]'),
+tabContents = document.querySelectorAll('[content]');
+
+tabs.forEach((tab: any) => {
+tab.addEventListener('click', () => {
+  const target = document.querySelector(tab.dataset.target);
+  tabContents.forEach((tabContent) => {
+    tabContent.classList.remove('active-tab');
+  });
+
+  target.classList.add('active-tab');
+
+  tabs.forEach((tab) => {
+    tab.classList.remove('active-tab');
+  });
+
+  tab.classList.add('active-tab');
+});
+});
+
   return (
     <div className="App">
         <div>
-          < Header />
+          < HomePage.Header />
+          < HomePage.Home /> 
+          < HomePage.Footer /> 
         </div>
-
-      <div className="deals-container">
-        <h2>Featured Deals</h2>
-        {sortedDeals.map((deal, index) => (
-          <div className="deal-row" key={deal.id}>
-            <div className="deal-ranking">{index + 1}</div>
-            <div className="deal-title">{deal.business}</div>
-            <div className="deal-purchases">Purchases: {deal.purchases}</div>
-          </div>
-        ))}
-      </div>
-      <footer className="footer">
-        <div className="footer-content">
-          <div className="footer-links">
-            <a href="#">Home</a>
-            <a href="#">Deals</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-          </div>
-          <div className="footer-social">
-            {/* Add social media icons or links here */}
-          </div>
-        </div>
-        <div className="footer-copyright">
-          &copy; {new Date().getFullYear()} Your Website Name. All rights reserved.
-        </div>
-      </footer>
     </div>
   );
 };

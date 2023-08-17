@@ -1,2 +1,1 @@
-export * from './Home'
-export * from './Header'
+export * as HomePage from './HomePage'

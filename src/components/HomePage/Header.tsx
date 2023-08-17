@@ -23,13 +23,13 @@ export const Header: React.FC = () => {
 
     <nav className="nav container">
       <a href="index.html" className="nav__logo">
-        <img src={require("../assets/img/logo.svg")} alt="" className="nav__logo-img" />
+        <img src={require("../../assets/img/logo.svg")} alt="" className="nav__logo-img" />
       </a>
 
       <div className="nav__menu" id="nav-menu">
         <div className="nav__menu-top">
           <a href="index.html" className="nav__menu-logo">
-            <img src={require("../assets/img/logo.svg")} alt="" /> 
+            <img src={require("../../assets/img/logo.svg")} alt="" /> 
           </a>
 
           <div className="nav__close" id="nav-close">
@@ -67,24 +67,24 @@ export const Header: React.FC = () => {
           />
 
           <button className="search__btn">
-            <img src={require("../assets/img/search.png")} alt="" />
+            <img src={require("../../assets/img/search.png")} alt="" />
           </button>
         </div>
       </div>
 
       <div className="header__user-actions">
         <a href="wishlist.html" className="header__action-btn">
-          <img src={require("../assets/img/icon-heart.svg")} alt="" />
-          <span className="count">3</span>
+          <img src={require("../../assets/img/icon-heart.svg")} alt="" />
+          {/* <span className="count">3</span> */}
         </a>
 
         <a href="cart.html" className="header__action-btn">
-          <img src={require("../assets/img/icon-cart.svg")} alt="" />
-          <span className="count">3</span>
+          <img src={require("../../assets/img/icon-cart.svg")} alt="" />
+          {/* <span className="count">3</span> */}
         </a>
 
         <div className="header__action-btn nav__toggle" id="nav-toggle">
-          <img src={require("../assets/img/menu-burger.svg")} alt=""/>
+          <img src={require("../../assets/img/menu-burger.svg")} alt=""/>
         </div>
       </div>
     </nav>
